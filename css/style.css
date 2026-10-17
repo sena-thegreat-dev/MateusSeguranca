@@ -1,0 +1,1189 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+/* Importa as fontes utilizadas no projeto */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Remove margens e espaçamentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura os links e o comportamento da página */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+/* Define as cores e fontes principais */
+:root {
+    --bg-color: #171B16;
+    --second-bg-color: #20251D;
+    --card-color: #252C22;
+    --main-color: #87916A;
+    --accent-color: #C4B58D;
+    --text-color: #F1F0E8;
+    --muted-color: #A4A99A;
+    --border-color: rgba(196, 181, 141, 0.22);
+}
+
+/* Define a aparência geral do site */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Remove a decoração dos links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Padroniza os botões */
+button {
+    font: inherit;
+}
+
+/* Configura o tamanho mínimo das seções */
+section {
+    padding: 11rem 9% 8rem;
+    scroll-margin-top: 7rem;
+}
+
+/* Destaca as palavras principais */
+span {
+    color: var(--main-color);
+}
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+/* Mantém o cabeçalho fixo durante a rolagem */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 8rem;
+    padding: 1.5rem 9%;
+    background: rgba(23, 27, 22, 0.96);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Organiza o logotipo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Cria o símbolo do escudo */
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    color: var(--accent-color);
+    font-size: 2.3rem;
+}
+
+/* Organiza o nome e o subtítulo */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08rem;
+    line-height: 1.1;
+}
+
+/* Destaca o sobrenome */
+.logo-text > span {
+    color: var(--accent-color);
+}
+
+/* Estiliza o subtítulo da marca */
+.logo-text small {
+    margin-top: 0.5rem;
+    color: var(--muted-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.13rem;
+}
+
+/* Organiza os links de navegação */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Estiliza os links */
+.navbar a {
+    color: var(--muted-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Destaca o link ativo e o link sob o mouse */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--accent-color);
+}
+
+/* Destaca o contato no menu */
+.navbar .nav-contact {
+    padding: 1.2rem 1.8rem;
+    border: 1px solid var(--main-color);
+    color: var(--text-color);
+}
+
+/* Altera o contato ao passar o mouse */
+.navbar .nav-contact:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* Esconde o botão de menu no computador */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* ========================================
+   3. BOTÕES
+======================================== */
+
+/* Estiliza os botões principais */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 2.2rem;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: var(--bg-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+    border-radius: 50px;
+}
+
+/* Cria o efeito de interação */
+.btn:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Cria a versão transparente dos botões */
+.btn-outline {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Destaca o botão transparente */
+.btn-outline:hover {
+    background: var(--second-bg-color);
+    color: var(--accent-color);
+}
+
+/* ========================================
+   4. HERO / APRESENTAÇÃO
+======================================== */
+
+/* Organiza o conteúdo principal */
+.home {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 14rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+    overflow: hidden;
+}
+
+/* Cria uma textura geométrica de fundo */
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 85% 40%,
+            rgba(135, 145, 106, 0.15),
+            transparent 45%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 80px,
+            rgba(255, 255, 255, 0.012) 81px,
+            transparent 82px
+        );
+}
+
+/* Define a largura do conteúdo */
+.home-content {
+    flex: 1 1 55rem;
+    max-width: 65rem;
+}
+
+/* Identifica a seção */
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+/* Cria o indicador visual */
+.status-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 1rem rgba(135, 145, 106, 0.7);
+}
+
+/* Estiliza a chamada superior */
+.home-content h3 {
+    margin-bottom: 1.5rem;
+    color: var(--muted-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.13rem;
+}
+
+/* Destaca o texto superior */
+.home-content h3 span {
+    color: var(--accent-color);
+}
+
+/* Estiliza o nome principal */
+.home-content h1 {
+    margin-bottom: 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(6rem, 7vw, 9rem);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.15rem;
+    text-transform: uppercase;
+}
+
+/* Destaca o sobrenome */
+.home-content h1 span {
+    color: var(--main-color);
+}
+
+/* Estiliza a descrição */
+.hero-description {
+    max-width: 54rem;
+    margin-bottom: 3rem;
+    color: var(--muted-color);
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+/* Organiza os botões da hero */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Organiza os valores profissionais */
+.hero-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Alinha ícones e textos */
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: var(--muted-color);
+    font-size: 1.2rem;
+}
+
+/* Destaca os ícones */
+.value-item i {
+    color: var(--accent-color);
+    font-size: 1.7rem;
+}
+
+/* Define a área da fotografia */
+.home-img {
+    position: relative;
+    flex: 0 1 42rem;
+    max-width: 42rem;
+    min-width: 0;
+}
+
+/* Configura a fotografia principal */
+.home-img img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.65) contrast(1.08);
+}
+
+/* Cria a identificação da fotografia */
+.photo-label {
+    position: absolute;
+    right: -2rem;
+    bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.8rem;
+    background: var(--second-bg-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Desenha a linha decorativa */
+.photo-line {
+    width: 0.4rem;
+    height: 4rem;
+    background: var(--main-color);
+}
+
+/* Organiza a legenda */
+.photo-label div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Destaca o nome da fotografia */
+.photo-label strong {
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+}
+
+/* Estiliza a descrição da fotografia */
+.photo-label small {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+}
+
+/* Posiciona o indicador de rolagem */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 9%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    letter-spacing: 0.15rem;
+}
+
+/* Destaca o ícone da rolagem */
+.scroll-indicator i {
+    color: var(--accent-color);
+}
+
+/* ========================================
+   5. SOBRE
+======================================== */
+
+/* Cria o fundo alternativo */
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    background: var(--second-bg-color);
+}
+
+/* Adiciona uma moldura decorativa */
+.image-decoration {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 40%;
+    height: 40%;
+    border-top: 2px solid var(--main-color);
+    border-left: 2px solid var(--main-color);
+    pointer-events: none;
+}
+
+/* Cria a legenda sobre a imagem */
+.image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.8rem;
+    background: rgba(23, 27, 22, 0.93);
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+}
+
+/* Define o espaço do texto */
+.sobre-content {
+    flex: 1 1 50rem;
+    max-width: 60rem;
+}
+
+/* Estiliza a identificação das seções */
+.section-tag {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+/* Estiliza os títulos */
+.heading {
+    margin-bottom: 2.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3.8rem, 4vw, 5.8rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Destaca palavras dos títulos */
+.heading span {
+    color: var(--main-color);
+}
+
+/* Estiliza os parágrafos da apresentação */
+.sobre-content p {
+    margin-bottom: 1.8rem;
+    color: var(--muted-color);
+    font-size: 1.4rem;
+    line-height: 1.9;
+}
+
+/* Organiza os diferenciais em lista */
+.about-list {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2.5rem 0 3rem;
+}
+
+/* Alinha os itens da lista */
+.about-list div {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.3rem;
+}
+
+/* Estiliza os ícones de confirmação */
+.about-list i {
+    color: var(--accent-color);
+}
+
+/* ========================================
+   6. ÁREAS DE ATUAÇÃO
+======================================== */
+
+/* Estiliza o cabeçalho da seção */
+.section-header {
+    max-width: 75rem;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+/* Estiliza a descrição do cabeçalho */
+.section-header > p {
+    color: var(--muted-color);
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+/* Organiza os cartões */
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+/* Estiliza cada cartão */
+.servicos-box {
+    position: relative;
+    padding: 3.5rem 2.5rem;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Cria o efeito de elevação */
+.servicos-box:hover {
+    transform: translateY(-0.6rem);
+    border-color: var(--main-color);
+}
+
+/* Posiciona a numeração */
+.service-number {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: rgba(196, 181, 141, 0.35);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Estiliza os ícones dos serviços */
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 2.5rem;
+    background: rgba(135, 145, 106, 0.12);
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-size: 2.6rem;
+}
+
+/* Estiliza os títulos dos cartões */
+.servicos-box h3 {
+    margin-bottom: 1.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+/* Estiliza a descrição dos serviços */
+.servicos-box p {
+    min-height: 10rem;
+    margin-bottom: 2.5rem;
+    color: var(--muted-color);
+    font-size: 1.3rem;
+    line-height: 1.9;
+}
+
+/* Estiliza o link dos cartões */
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Adiciona movimento ao ícone */
+.service-link i {
+    transition: transform 0.3s ease;
+}
+
+/* Move o ícone ao passar o mouse */
+.service-link:hover i {
+    transform: translateX(0.5rem);
+}
+
+/* Estiliza a observação sobre as áreas */
+.service-note {
+    margin-top: 3rem;
+    color: var(--muted-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Adiciona espaço entre o ícone e o texto */
+.service-note i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* ========================================
+   7. DIFERENCIAIS
+======================================== */
+
+/* Divide a seção em duas colunas */
+.diferenciais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    background: var(--second-bg-color);
+}
+
+/* Define a largura da descrição */
+.diferenciais-description {
+    max-width: 55rem;
+    margin-bottom: 3rem;
+    color: var(--muted-color);
+    font-size: 1.4rem;
+    line-height: 1.9;
+}
+
+/* Organiza os diferenciais */
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+/* Alinha ícones e textos */
+.diferencial-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* Destaca os ícones dos diferenciais */
+.diferencial-item > i {
+    color: var(--accent-color);
+    font-size: 2.3rem;
+}
+
+/* Estiliza os títulos */
+.diferencial-item h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+/* Estiliza as descrições */
+.diferencial-item p {
+    color: var(--muted-color);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Cria o painel de citação */
+.quote-panel {
+    padding: 4rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Estiliza o ícone de citação */
+.quote-panel > i {
+    margin-bottom: 2rem;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+/* Estiliza a frase */
+.quote-panel blockquote {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Cria a linha decorativa */
+.quote-line {
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    margin: 2.5rem 0;
+    background: var(--main-color);
+}
+
+/* Estiliza a assinatura */
+.quote-panel > p {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+/* Estiliza o subtítulo */
+.quote-panel > small {
+    color: var(--muted-color);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+/* ========================================
+   8. CONTATO
+======================================== */
+
+/* Centraliza o conteúdo de contato */
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(135, 145, 106, 0.12),
+            transparent 65%
+        );
+}
+
+/* Limita a largura do painel */
+.contact-panel {
+    max-width: 75rem;
+}
+
+/* Estiliza a descrição do contato */
+.contact-panel > p {
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+    color: var(--muted-color);
+    font-size: 1.4rem;
+    line-height: 1.9;
+}
+
+/* Organiza os links sociais */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Estiliza os ícones sociais */
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+    border-radius: 50px;
+}
+
+/* Destaca os ícones sociais */
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-color: var(--main-color);
+}
+
+/* Organiza a assinatura decorativa */
+.contact-decoration {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    color: var(--muted-color);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+}
+
+/* Destaca o escudo */
+.contact-decoration i {
+    color: var(--main-color);
+    font-size: 2.5rem;
+}
+
+/* ========================================
+   9. RODAPÉ
+======================================== */
+
+/* Organiza o rodapé */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.5rem 9%;
+    background: var(--second-bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Estiliza a marca no rodapé */
+.footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* Destaca o ícone */
+.footer-brand i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* Estiliza o texto de direitos autorais */
+.footer > p {
+    color: var(--muted-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Cria o botão de retorno */
+.footer-iconTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    transition: 0.3s ease;
+    border-radius: 50px;
+}
+
+/* Destaca o botão de retorno */
+.footer-iconTop:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   10. RESPONSIVIDADE - TABLETS
+======================================== */
+
+@media (max-width: 1200px) {
+
+    /* Reduz o espaçamento lateral */
+    section {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    /* Ajusta o cabeçalho */
+    .header {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    /* Aproxima os links do menu */
+    .navbar {
+        gap: 2rem;
+    }
+
+    /* Ajusta o espaço entre as colunas */
+    .sobre {
+        gap: 5rem;
+    }
+
+    /* Ajusta a hero */
+    .home {
+        gap: 4rem;
+    }
+}
+
+/* ========================================
+   11. RESPONSIVIDADE - MENU MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    /* Exibe o botão do menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Transforma a navegação em menu suspenso */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1.5rem 5%;
+        background: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Exibe o menu quando ativado pelo JavaScript */
+    .navbar.active {
+        display: flex;
+    }
+
+    /* Ajusta cada link do menu */
+    .navbar a {
+        padding: 1.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Remove a borda do último link */
+    .navbar a:last-child {
+        border-bottom: none;
+    }
+
+    /* Mantém o contato alinhado à esquerda */
+    .navbar .nav-contact {
+        align-self: flex-start;
+        margin-top: 1rem;
+        padding: 1.2rem 1.8rem;
+    }
+
+    /* Ajusta a apresentação */
+    .home {
+        gap: 3rem;
+    }
+
+    /* Ajusta a fotografia */
+    .home-img {
+        flex-basis: 35rem;
+    }
+
+    /* Ajusta os diferenciais */
+    .diferenciais {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    /* Limita o painel de citação */
+    .quote-panel {
+        max-width: 65rem;
+    }
+
+    /* Ajusta os cartões */
+    .servicos-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ========================================
+   12. RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+
+    /* Reduz os espaços laterais */
+    section {
+        padding: 10rem 6% 6rem;
+    }
+
+    /* Ajusta o cabeçalho */
+    .header {
+        min-height: 7rem;
+        padding: 1.2rem 6%;
+    }
+
+    /* Reduz a marca */
+    .logo-icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        font-size: 2rem;
+    }
+
+    /* Reduz o nome */
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    /* Ajusta o subtítulo da marca */
+    .logo-text small {
+        font-size: 0.75rem;
+    }
+
+    /* Organiza a hero verticalmente */
+    .home {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5rem;
+        padding-top: 12rem;
+        padding-bottom: 8rem;
+    }
+
+    /* Ajusta o texto principal */
+    .home-content {
+        flex-basis: auto;
+        max-width: 100%;
+    }
+
+    /* Reduz o título */
+    .home-content h1 {
+        font-size: clamp(5.5rem, 15vw, 7.5rem);
+    }
+
+    /* Ajusta a chamada superior */
+    .home-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    /* Ajusta a descrição */
+    .hero-description {
+        font-size: 1.4rem;
+    }
+
+    /* Organiza os botões */
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    /* Mantém os botões em largura confortável */
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    /* Ajusta os valores */
+    .hero-values {
+        gap: 1.5rem;
+    }
+
+    /* Reduz o texto dos valores */
+    .value-item {
+        font-size: 1.1rem;
+    }
+
+    /* Centraliza a imagem da hero */
+    .home-img {
+        align-self: center;
+        width: 85%;
+        max-width: 38rem;
+        flex-basis: auto;
+        margin-bottom: 2rem;
+    }
+
+    /* Reposiciona a legenda */
+    .photo-label {
+        right: -1rem;
+        bottom: 2rem;
+        padding: 1.2rem;
+    }
+
+    /* Oculta o indicador para evitar sobreposição */
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Empilha a seção sobre */
+    .sobre {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    /* Ajusta a imagem sobre */
+    .sobre-img {
+        width: 85%;
+        max-width: 38rem;
+    }
+
+    /* Ajusta o título das seções */
+    .heading {
+        font-size: 4rem;
+    }
+
+    /* Reduz os cartões para uma coluna */
+    .servicos-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Remove a altura mínima dos parágrafos */
+    .servicos-box p {
+        min-height: 0;
+    }
+
+    /* Reduz o espaço interno dos cartões */
+    .servicos-box {
+        padding: 3rem 2.2rem;
+    }
+
+    /* Organiza os diferenciais em uma coluna */
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* Reduz o painel de citação */
+    .quote-panel {
+        padding: 3rem 2.5rem;
+    }
+
+    /* Ajusta a frase */
+    .quote-panel blockquote {
+        font-size: 3rem;
+    }
+
+    /* Reduz o tamanho do contato */
+    .contact-decoration {
+        font-size: 0.8rem;
+        letter-spacing: 0.08rem;
+    }
+
+    /* Empilha os elementos do rodapé */
+    .footer {
+        flex-direction: column;
+        padding: 3rem 6%;
+    }
+
+}
+
+/* ========================================
+   13. CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 380px) {
+
+    /* Reduz o título principal */
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    /* Reduz o tamanho dos títulos */
+    .heading {
+        font-size: 3.4rem;
+    }
+
+    /* Ajusta os valores */
+    .hero-values {
+        flex-direction: column;
+    }
+
+    /* Reduz a legenda da fotografia */
+    .photo-label strong {
+        font-size: 1rem;
+    }
+
+    /* Reduz o texto da legenda */
+    .photo-label small {
+        font-size: 0.8rem;
+    }
+
+}
