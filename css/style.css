@@ -18,6 +18,7 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     scroll-padding-top: 9rem;
+    overflow-x: hidden;
 }
 
 /* Define as cores e fontes principais */
@@ -34,10 +35,16 @@ html {
 
 /* Define a aparência geral do site */
 body {
+    width: 100%;
     background: var(--bg-color);
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+}
+
+/* Impede que mídias ampliem a largura da página em telas estreitas */
+img {
+    max-width: 100%;
 }
 
 /* Remove a decoração dos links */
@@ -53,6 +60,7 @@ button {
 
 /* Configura o tamanho mínimo das seções */
 section {
+    width: 100%;
     padding: 11rem 9% 8rem;
     scroll-margin-top: 7rem;
 }
@@ -431,6 +439,7 @@ span {
     justify-content: center;
     gap: 8rem;
     background: var(--second-bg-color);
+    overflow: hidden;
 }
 
 /* Organiza os registros profissionais em uma composição assimétrica */
@@ -524,6 +533,7 @@ span {
 /* Define o espaço do texto */
 .sobre-content {
     flex: 1 1 50rem;
+    min-width: 0;
     max-width: 60rem;
 }
 
@@ -539,7 +549,8 @@ span {
 
 /* Estiliza os títulos */
 .heading {
-    width: 600px;
+    width: auto;
+    max-width: 100%;
     margin-bottom: 2.5rem;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: clamp(3.8rem, 4vw, 5.8rem);
@@ -547,6 +558,7 @@ span {
     line-height: 1.05;
     text-transform: uppercase;
     text-align: center;
+    overflow-wrap: break-word;
 }
 
 /* Destaca palavras dos títulos */
@@ -608,6 +620,8 @@ span {
 
 /* Estiliza o cabeçalho da seção */
 .section-header {
+    width: 100%;
+    min-width: 0;
     max-width: 75rem;
     margin: 0 auto 5rem;
     text-align: center;
@@ -730,6 +744,18 @@ span {
     align-items: center;
     gap: 7rem;
     background: var(--second-bg-color);
+    overflow: hidden;
+}
+
+/* Evita que o texto da seção de princípios mantenha largura de desktop */
+.diferenciais-content {
+    min-width: 0;
+}
+
+/* Mantém a fotografia opcional da seção de princípios proporcional */
+.diferenciais .experience-gallery {
+    flex: 0 1 42rem;
+    min-height: 0;
 }
 
 /* Define a largura da descrição */
@@ -842,6 +868,7 @@ span {
 
 /* Limita a largura do painel */
 .contact-panel {
+    width: 100%;
     max-width: 75rem;
 }
 
@@ -1054,9 +1081,9 @@ span {
         flex-basis: 35rem;
     }
 
-    /* Ajusta os diferenciais */
+    /* Empilha os diferenciais antes que o conteúdo perca espaço */
     .diferenciais {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 4rem;
     }
 
@@ -1185,6 +1212,14 @@ span {
         gap: 4rem;
     }
 
+    /* Garante que os conteúdos flexíveis não extrapolem a tela */
+    .sobre-content,
+    .diferenciais-content {
+        width: 100%;
+        max-width: 100%;
+        flex-basis: auto;
+    }
+
     /* Ajusta a galeria de experiências */
     .experience-gallery {
         width: 100%;
@@ -1217,7 +1252,15 @@ span {
 
     /* Ajusta o título das seções */
     .heading {
-        font-size: 4rem;
+        width: 100%;
+        font-size: clamp(3.2rem, 10vw, 4rem);
+        text-align: left;
+    }
+
+    /* Mantém cabeçalhos centralizados apenas nas seções centradas */
+    .section-header .heading,
+    .contato .heading {
+        text-align: center;
     }
 
     /* Reduz os cartões para uma coluna */
@@ -1253,6 +1296,8 @@ span {
 
     /* Reduz o tamanho do contato */
     .contact-decoration {
+        justify-content: center;
+        flex-wrap: wrap;
         font-size: 0.8rem;
         letter-spacing: 0.08rem;
     }
@@ -1296,4 +1341,56 @@ span {
         font-size: 0.8rem;
     }
 
+}
+
+/* ========================================
+   14. AJUSTES PARA CELULARES ESTREITOS
+======================================== */
+
+@media (max-width: 430px) {
+
+    section {
+        padding: 8rem 5% 5rem;
+    }
+
+    .header {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .logo {
+        gap: 0.8rem;
+    }
+
+    .logo-text {
+        font-size: 1.7rem;
+    }
+
+    .experience-gallery {
+        min-height: 43rem;
+    }
+
+    .gallery-photo-main {
+        right: 4.5rem;
+    }
+
+    .gallery-photo-top {
+        top: 2rem;
+        width: 11.5rem;
+        height: 15rem;
+    }
+
+    .gallery-photo-bottom {
+        bottom: 2rem;
+        width: 13rem;
+        height: 13rem;
+    }
+
+    .experience-list {
+        padding: 1.8rem;
+    }
+
+    .quote-panel {
+        padding: 2.5rem 2rem;
+    }
 }
