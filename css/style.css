@@ -1253,7 +1253,7 @@ span {
     /* Ajusta o título das seções */
     .heading {
         width: 100%;
-        font-size: clamp(3.2rem, 10vw, 4rem);
+        font-size: clamp(3.2rem, 10vw, 3.7rem);
         text-align: left;
     }
 
